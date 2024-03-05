@@ -1,5 +1,8 @@
 package hello.servlet.basic.request;
 
-public class RequestHeaderServlet {
+import jakarta.servlet.http.HttpServlet;
+
+public class RequestHeaderServlet extends HttpServlet {
+
 
 }
