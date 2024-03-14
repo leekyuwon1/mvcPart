@@ -55,5 +55,11 @@ public class ResponseHeaderServlet extends HttpServlet {
 //        response.setStatus(HttpServletResponse.SC_FOUND); //302
 //        response.setHeader("Location", "/basic/hello-form.html");
         response.sendRedirect("/basic/hello-form.html");
+        PrintWriter writer = response.getWriter();
+        writer.println("<html>");
+        writer.println("<body>");
+        writer.println("  <div>안녕?</div>");
+        writer.println("</body>");
+        writer.println("</html>");
     }
 }
