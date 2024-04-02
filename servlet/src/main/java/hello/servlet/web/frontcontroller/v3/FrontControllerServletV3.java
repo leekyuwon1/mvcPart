@@ -16,6 +16,7 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
+// v3 - 서블릿의 종속성과, 뷰 이름 중복 제거
 @WebServlet(name = "frontControllerServletV3", urlPatterns = "/front-controller/v3/*")
 public class FrontControllerServletV3 extends HttpServlet {
 
@@ -45,11 +46,11 @@ public class FrontControllerServletV3 extends HttpServlet {
         String viewName = mv.getViewName();
         MyView view = viewResolver(viewName);
 
-        view.render(request, response);
+        view.render(mv.getModel(),request, response);
     }
 
     private static MyView viewResolver(String viewName) {
-        return new MyView("/WEB-INF/views" + viewName + ".jsp");
+        return new MyView("/WEB-INF/views/" + viewName + ".jsp");
     }
 
     private static Map<String, String> createParamMap(HttpServletRequest request) {

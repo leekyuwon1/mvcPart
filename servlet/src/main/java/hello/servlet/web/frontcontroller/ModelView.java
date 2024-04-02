@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class ModelView {
-    private String viewName;
+    private String viewName; // Path 정보 즉 (new-form, members, save)
     private Map<String, Object> model = new HashMap<>();
 
     public ModelView(String viewName) {
