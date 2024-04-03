@@ -50,6 +50,8 @@ public class FrontControllerServletV3 extends HttpServlet {
     }
 
     private static MyView viewResolver(String viewName) {
+        // 폴더의 위치가 달라져도 하나의 지점에서 한번에 바꿀 수 있다.
+        // 논리 이름 : new-form, 물리 이름 "/WEB-INF/views/" ".jsp"
         return new MyView("/WEB-INF/views/" + viewName + ".jsp");
     }
 

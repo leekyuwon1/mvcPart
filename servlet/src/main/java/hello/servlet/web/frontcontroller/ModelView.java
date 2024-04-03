@@ -4,8 +4,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class ModelView {
-    private String viewName; // Path 정보 즉 (new-form, members, save)
-    private Map<String, Object> model = new HashMap<>();
+    private String viewName; // 물리 이름 즉 (new-form, members, save)
+    private Map<String, Object> model = new HashMap<>(); // 모델
 
     public ModelView(String viewName) {
         this.viewName = viewName;
