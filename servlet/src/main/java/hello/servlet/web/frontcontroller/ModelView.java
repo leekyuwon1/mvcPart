@@ -15,9 +15,8 @@ public class ModelView {
         return viewName;
     }
 
-    public ModelView setViewName(String viewName) {
+    public void setViewName(String viewName) {
         this.viewName = viewName;
-        return this;
     }
 
     public Map<String, Object> getModel() {
