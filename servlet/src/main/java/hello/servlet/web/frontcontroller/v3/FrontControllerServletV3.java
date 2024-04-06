@@ -40,7 +40,7 @@ public class FrontControllerServletV3 extends HttpServlet {
         }
 
         //paramMap
-        Map<String, String> paramMap = createParamMap(request);
+        Map<String, String> paramMap = createParamMap(request); // 쿼리 스트링
         ModelView mv = controller.process(paramMap);
 
         String viewName = mv.getViewName();
@@ -59,6 +59,10 @@ public class FrontControllerServletV3 extends HttpServlet {
         Map<String, String> paramMap = new HashMap<>();
         request.getParameterNames().asIterator()
                 .forEachRemaining(paramName -> paramMap.put(paramName, request.getParameter(paramName)));
+        // getParameterNames : 파라미터를 다 꺼낸다.
+        // asIterator : 배열 앞에가 없을때까지 루프를 돌린다
+
+
         return paramMap;
     }
 }
